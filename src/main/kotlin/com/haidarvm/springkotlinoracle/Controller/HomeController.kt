@@ -2,6 +2,7 @@ package com.haidarvm.springkotlinoracle.Controller
 
 import com.haidarvm.springkotlinoracle.Models.Article
 import com.haidarvm.springkotlinoracle.Repositories.ArticleRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -11,7 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable
  * @author haidarvm on 10/1/19
  */
 @Controller
-class HomeController(val articleRepository: ArticleRepository) {
+class HomeController {
+
+    @Autowired
+    lateinit var articleRepository: ArticleRepository
 
     @GetMapping("")
     fun home() = "home"
@@ -30,7 +34,4 @@ class HomeController(val articleRepository: ArticleRepository) {
         return "article"
     }
 
-    fun check() {
-
-    }
 }

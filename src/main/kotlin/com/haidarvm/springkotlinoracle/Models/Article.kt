@@ -12,9 +12,7 @@ import javax.persistence.Id
 class Article(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var articleId: Long,
-        var title: String,
-        var body: String
-) {
-    constructor() : this(0,"","")
-}
+        var articleId: Long = 0,
+        var title: String = "",
+        var body: String =""
+)
